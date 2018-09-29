@@ -24,16 +24,19 @@ def signup():
     if username and password and verifyPassword:
         if (len(username)<20 and len(username)>3 and (' ' in username) == False) and (len(password)<20 and len(password)>3 and (' ' in password) == False) and (len(verifyPassword)<20 and len(verifyPassword)>3 and (' ' in verifyPassword) == False):
             if password == verifyPassword:
-                template = jinja_env.get_template('hello.html') 
-        # else:
-        #     template = jinja_env.get_template('index.html') 
-        #     warning1 = "Fields empty"
+                template = jinja_env.get_template('hello.html')
+            else:
+                template = jinja_env.get_template('index.html') 
+                warning1 = "The user's password and password-confirmation do not match"
+        else:
+            template = jinja_env.get_template('index.html') 
+            warning1 = "Username or Password, would be invalid"
+    else:
+        template = jinja_env.get_template('index.html') 
+        warning1 = "Fields empty"
                    
        
-    return template.render(name=username, passw=password, veri=verifyPassword, email=email, )
+    return template.render(name=username, passw=password, veri=verifyPassword, email=email, warning1=warning1 )
 
 
 app.run()
-
-    #    if (len(username)<20 and len(username)>3 and (username.isspace() == True)) and (len(password)<20 and len(password)>3 and (password.isspace() == True)) and (len(verifyPassword)<20 and len(verifyPassword)>3 and (verifyPassword.isspace() == True)):
-    # warning1=warning1
