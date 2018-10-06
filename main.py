@@ -24,8 +24,12 @@ def signup():
     if username and password and verifyPassword:
         if (len(username)<20 and len(username)>3 and (' ' in username) == False) and (len(password)<20 and len(password)>3 and (' ' in password) == False) and (len(verifyPassword)<20 and len(verifyPassword)>3 and (' ' in verifyPassword) == False):
             if password == verifyPassword:
-                template = jinja_env.get_template('hello.html')
-                warning1 = ""
+                if email:
+                    template = jinja_env.get_template('index.html') 
+                    warning1 = "We have email"
+                else:    
+                    template = jinja_env.get_template('hello.html')
+                    warning1 = ""
             else:
                 template = jinja_env.get_template('index.html') 
                 warning1 = "The user's password and password-confirmation do not match"
