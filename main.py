@@ -25,8 +25,12 @@ def signup():
         if (len(username)<20 and len(username)>3 and (' ' in username) == False) and (len(password)<20 and len(password)>3 and (' ' in password) == False) and (len(verifyPassword)<20 and len(verifyPassword)>3 and (' ' in verifyPassword) == False):
             if password == verifyPassword:
                 if email:
-                    template = jinja_env.get_template('index.html') 
-                    warning1 = "We have email"
+                    if ((' ' in email) == False) and (len(email)<80 and len(email)>3) and (email.count("@") == 1) and (email.count(".") == 1):
+                        template = jinja_env.get_template('hello.html')
+                        warning1 = ""
+                    else:
+                        template = jinja_env.get_template('index.html') 
+                        warning1 = "Email not valid"
                 else:    
                     template = jinja_env.get_template('hello.html')
                     warning1 = ""
