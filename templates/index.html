@@ -1,42 +1,34 @@
 {% extends "wrapper.html" %}
 
-{% block title %}
-Signup
-{% endblock%}
-
 {% block content %}
 
 <div class="row justify-content-center align-items-center h-100">
-    
     <div class="card text-white bg-success mb-3 " style="max-width: 18rem;">
         <div class="card-header">Signup</div>
-        <div class="card-body">
-            <form class="form-signin" method="POST">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">User name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Enter Username">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Verify Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" name="verifyPassword" placeholder="Verify Password">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email (optional)</label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
-                </div>
-                <div><p class="text-warning">{{warning1}}</p></div>
-
-                
-                
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            <div class="card-body">
+                <form class="form-signin" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">User name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Enter Username" value="{{name}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Verify Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="verifyPassword" placeholder="Verify Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email (optional)</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" value="{{email}}">
+                    </div>
+                    <div><p class="text-warning">{{warning1}}</p></div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 

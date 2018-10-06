@@ -45,7 +45,7 @@ def signup():
         warning1 = "Fields empty"
                    
        
-    return template.render(name=username, passw=password, veri=verifyPassword, email=email, warning1=warning1 )
+    return template.render(name=username, warning1=warning1, email=email)
 
 
 app.run()
